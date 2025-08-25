@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Victor Guillen</title>
+    <!-- Carga la fuente Inter de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Carga la librería de Tailwind CSS para un diseño moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind para usar la fuente Inter -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para un mejor diseño y experiencia de usuario */
+        .project-card, .certification-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .project-card:hover, .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Estilo para el botón de volver arriba */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            transition: opacity 0.3s ease-in-out;
+        }
+        /* Oculta la imagen de placeholder en pantallas pequeñas */
+        @media (max-width: 640px) {
+            .hero-image {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+    <!-- Barra de navegación (Header) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-gray-900">
+                Portafolio de Victor Guillen
+            </a>
+            <div class="space-x-4 hidden md:block">
+                <a href="#acerca-de" class="text-gray-600 hover:text-indigo-600 transition-colors">Acerca de mí</a>
+                <a href="#habilidades" class="text-gray-600 hover:text-indigo-600 transition-colors">Habilidades</a>
+                <a href="#proyectos" class="text-gray-600 hover:text-indigo-600 transition-colors">Portafolio</a>
+                <a href="#certificaciones" class="text-gray-600 hover:text-indigo-600 transition-colors">Certificaciones</a>
+                <a href="#contacto" class="text-gray-600 hover:text-indigo-600 transition-colors">Contacto</a>
+            </div>
+            <!-- Menú hamburguesa para móvil (no funcional, solo de demostración) -->
+            <button class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Sección principal (Hero) -->
+    <section class="bg-gray-100 py-20 lg:py-32 animate-fade-in">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Tecnólogo en Marketing Digital y Comercio Electrónico
+                </h1>
+                <p class="text-lg lg:text-xl text-gray-600 mb-6">
+                    Creando estrategias innovadoras y contenido que convierte.
+                </p>
+                <a href="#proyectos" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105">
+                    Ver Portafolio
+                </a>
+            </div>
+            <div class="flex-1 flex justify-center md:justify-end">
+                <!-- Imagen de perfil placeholder -->
+                <img src="https://placehold.co/400x400/94A3B8/F8FAFC?text=Foto" alt="[Tu Nombre] - Perfil" class="w-64 h-64 lg:w-80 lg:h-80 rounded-full shadow-2xl hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección "Acerca de mí" -->
+    <section id="acerca-de" class="py-20 lg:py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Acerca de mí</h2>
+            <p class="text-lg text-gray-700">
+                Tecnólogo en Marketing Digital con experiencia en desarrollo web, publicidad digital y producción de contenido. Domino el análisis de datos para crear estrategias que impulsan el crecimiento.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección de Habilidades -->
+    <section id="habilidades" class="py-20 lg:py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Habilidades Clave</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Habilidad: Estrategia y Publicidad Digital -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-3">Estrategia y Publicidad</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>TikTok Ads (Business Center, Ads Manager)</li>
+                        <li>Google Ads y Analytics</li>
+                        <li>Meta Business Suite</li>
+                        <li>Neuromarketing y Neuroventas</li>
+                    </ul>
+                </div>
+                <!-- Habilidad: Desarrollo Web y E-commerce -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-3">Desarrollo Web y E-commerce</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>WordPress y Elementor</li>
+                        <li>WooCommerce</li>
+                        <li>HTML, CSS, Python (básico)</li>
+                        <li>Diseño de sitios responsivos</li>
+                    </ul>
+                </div>
+                <!-- Habilidad: Diseño y Contenidos -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-3">Diseño y Contenidos</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Adobe Illustrator, Premiere, After Effects</li>
+                        <li>Canva y Adobe Express</li>
+                        <li>IA (ChatGPT, Gemini, Leonardo AI)</li>
+                        <li>Copywriting y Storytelling</li>
+                    </ul>
+                </div>
+                <!-- Habilidad: Investigación y Planificación -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-3">Investigación y Planificación</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Análisis de Mercado</li>
+                        <li>Manuales de Marca y Branding</li>
+                        <li>Plan Canvas y Objetivos SMART</li>
+                        <li>Embudos de venta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos (Portafolio) -->
+    <section id="proyectos" class="py-20 lg:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Mi Portafolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Tarjeta de Proyecto 1 -->
+                <div class="project-card bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/800x600/E5E7EB/6B7280?text=Proyecto+1" alt="Imagen del Proyecto 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Tienda Online de Artesanía</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Desarrollo de una tienda en línea con WooCommerce y Elementor, incluyendo la configuración de métodos de pago y la optimización de productos.
+                        </p>
+                        <!-- Se ha modificado el enlace para que apunte a la página de proyecto genérica -->
+                        <a href="pagina-proyecto.html?proyecto=Tienda+Online+de+Artesania" class="text-indigo-600 hover:text-indigo-800 font-bold transition-colors">
+                            Ver proyecto &rarr;
+                        </a>
+                    </div>
+                </div>
+                <!-- Tarjeta de Proyecto 2 -->
+                <div class="project-card bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/800x600/D1D5DB/4B5563?text=Proyecto+2" alt="Imagen del Proyecto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Campaña de TikTok Ads</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Creación y gestión de una campaña de TikTok para un negocio ficticio, optimizando el presupuesto y analizando las métricas de rendimiento.
+                        </p>
+                        <!-- Se ha modificado el enlace para que apunte a la página de proyecto genérica -->
+                        <a href="pagina-proyecto.html?proyecto=Campana+de+TikTok+Ads" class="text-indigo-600 hover:text-indigo-800 font-bold transition-colors">
+                            Ver reporte &rarr;
+                        </a>
+                    </div>
+                </div>
+                <!-- Tarjeta de Proyecto 3 -->
+                <div class="project-card bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/800x600/9CA3AF/374151?text=Proyecto+3" alt="Imagen del Proyecto 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Rediseño de Landing Page</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Mejoré la experiencia de usuario (UX) y el copywriting de una landing page, aumentando la tasa de conversión en un 20%.
+                        </p>
+                        <!-- Se ha modificado el enlace para que apunte a la página de proyecto genérica -->
+                        <a href="pagina-proyecto.html?proyecto=Rediseño+de+Landing+Page" class="text-indigo-600 hover:text-indigo-800 font-bold transition-colors">
+                            Ver antes/después &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Certificaciones -->
+    <section id="certificaciones" class="py-20 lg:py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Certificaciones</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta de Certificación 1 -->
+                <div class="certification-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Google Analytics Individual Qualification</h3>
+                    <p class="text-gray-600">Google</p>
+                    <p class="text-sm text-gray-500 mt-1">[Año de obtención]</p>
+                </div>
+                <!-- Tarjeta de Certificación 2 -->
+                <div class="certification-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Certificación de Campañas de Búsqueda</h3>
+                    <p class="text-gray-600">Google Ads</p>
+                    <p class="text-sm text-gray-500 mt-1">[Año de obtención]</p>
+                </div>
+                <!-- Tarjeta de Certificación 3 -->
+                <div class="certification-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Meta Certified Digital Marketing Associate</h3>
+                    <p class="text-gray-600">Meta (Facebook Blueprint)</p>
+                    <p class="text-sm text-gray-500 mt-1">[Año de obtención]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-20 lg:py-24 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-2xl text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Contáctame</h2>
+            <p class="text-lg text-gray-700 mb-8">
+                ¿Interesado en mis servicios o en colaborar? No dudes en contactarme para discutir tu próximo proyecto.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:vicmang.2003@gmail.com" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-colors">
+                    Enviar un correo
+                </a>
+                <a href="https://www.linkedin.com/in/[TuPerfil]" target="_blank" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-900 transition-colors">
+                    Conectar en LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página (Footer) -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto text-center px-6">
+            <p>&copy; 2025 Victor Guillen. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón de volver arriba (visible con JavaScript) -->
+    <button id="scrollToTopBtn" class="bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        // Lógica para mostrar y ocultar el botón de "volver arriba"
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+                scrollToTopBtn.style.opacity = "1";
+            } else {
+                scrollToTopBtn.style.opacity = "0";
+                setTimeout(() => {
+                    if (document.body.scrollTop <= 20 && document.documentElement.scrollTop <= 20) {
+                        scrollToTopBtn.style.display = "none";
+                    }
+                }, 300);
+            }
+        };
+
+        // Lógica para el smooth scrolling
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</body>
+
+</html>
